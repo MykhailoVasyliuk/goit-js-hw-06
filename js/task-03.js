@@ -12,3 +12,19 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+// Отримує посилання на галерею
+const galleryEl = document.querySelector(".gallery");
+
+// Створює шаблон розмітки для для об'єкта (callback функція)
+const createPhotoMarkup = (({ url, alt }) => {
+  return `
+  <li class="gallery__item"><img src="${url}" alt="${alt}" class="gallery__img"></li>
+  `
+})
+
+// Створює розмітку для масиву об'єктів
+const createGalleryMarcup = images.map(createPhotoMarkup).join("");
+
+// Записує результат 
+galleryEl.insertAdjacentHTML("afterbegin", createGalleryMarcup);
