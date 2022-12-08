@@ -4,6 +4,7 @@ const valueEl = document.querySelector(`#value`);
 
 let counterValue = 0;
 
+
 decrementEl.addEventListener(`click`, minusBtnClick);
 incrementEl.addEventListener(`click`, plusBtnClick);
 
@@ -17,4 +18,3 @@ function plusBtnClick () {
     counterValue += 1;
     valueEl.textContent = counterValue;
 }
-
